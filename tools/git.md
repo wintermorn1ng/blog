@@ -136,7 +136,7 @@ git tag <tag-name> <指向记录>
 git clone
 ```
 
-## 将本地仓库退到远程仓库
+## 将本地仓库推到远程仓库
 
 ```
 git remote add origin <地址>
