@@ -1,9 +1,39 @@
+[toc]
+
 # 本地分支管理
 
-## 提交修改
+## 提交变更
 
 ```git
-git commit
+git commit -m "commit description"
+```
+
+## 撤销变更
+
+本地分支：
+
+`git reset` 向上移动分支，原来指向的提交记录就跟从来没有提交过一样。
+
+```
+git reset HEAD~1
+```
+
+在reset后， `原HEAD`处 所做的变更还在，但是处于未加入暂存区状态。
+
+远程分支：
+
+```
+git revert HEAD
+```
+
+## 撤销修改
+```
+git checkout -- <file>
+```
+
+## 删除文件
+```
+git rm <file>
 ```
 
 ## 创建分支
@@ -106,9 +136,14 @@ git tag <tag-name> <指向记录>
 git clone
 ```
 
-# 参考
+## 将本地仓库退到远程仓库
 
-[Learn Git Branching](https://learngitbranching.js.org/?locale=zh_CN)
+```
+git remote add origin <地址>
+git branch -M main
+git push -u origin main
+```
+
 
 ### git fetch
 
@@ -122,3 +157,8 @@ git clone
 它可能已经将进行这一操作所需的所有数据都下载了下来，但是**并没有**修改你本地的文件
 
 所以, 你可以将 `git fetch` 的理解为单纯的下载操作。
+
+
+# 参考
+
+[Learn Git Branching](https://learngitbranching.js.org/?locale=zh_CN)
